@@ -15,6 +15,8 @@
 		0E02D04522E74FBE003FE7A5 /* WindowNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E02D04422E74FBE003FE7A5 /* WindowNotificationCenter.swift */; };
 		0E02D04722E74FC6003FE7A5 /* WindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E02D04622E74FC6003FE7A5 /* WindowInfo.swift */; };
 		0E02D04922E74FCC003FE7A5 /* ApplicationBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E02D04822E74FCC003FE7A5 /* ApplicationBundle.swift */; };
+		0E0C0F7C22E7942100158BD8 /* DelegatableWindowEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C0F7B22E7942100158BD8 /* DelegatableWindowEventListener.swift */; };
+		0E0C0F7E22E7945B00158BD8 /* PublishableWindowEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0C0F7D22E7945B00158BD8 /* PublishableWindowEventListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		0E02D04422E74FBE003FE7A5 /* WindowNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowNotificationCenter.swift; sourceTree = "<group>"; };
 		0E02D04622E74FC6003FE7A5 /* WindowInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowInfo.swift; sourceTree = "<group>"; };
 		0E02D04822E74FCC003FE7A5 /* ApplicationBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBundle.swift; sourceTree = "<group>"; };
+		0E0C0F7B22E7942100158BD8 /* DelegatableWindowEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatableWindowEventListener.swift; sourceTree = "<group>"; };
+		0E0C0F7D22E7945B00158BD8 /* PublishableWindowEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishableWindowEventListener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 			children = (
 				0E02D02922E74FA0003FE7A5 /* WindowEventListener.h */,
 				0E02D04022E74FAB003FE7A5 /* WindowEventListener.swift */,
+				0E0C0F7B22E7942100158BD8 /* DelegatableWindowEventListener.swift */,
+				0E0C0F7D22E7945B00158BD8 /* PublishableWindowEventListener.swift */,
 				0E02D04422E74FBE003FE7A5 /* WindowNotificationCenter.swift */,
 				0E02D04222E74FB4003FE7A5 /* RepeatingTimer.swift */,
 				0E02D04622E74FC6003FE7A5 /* WindowInfo.swift */,
@@ -210,9 +216,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0C0F7E22E7945B00158BD8 /* PublishableWindowEventListener.swift in Sources */,
 				0E02D04122E74FAB003FE7A5 /* WindowEventListener.swift in Sources */,
 				0E02D04322E74FB4003FE7A5 /* RepeatingTimer.swift in Sources */,
 				0E02D04522E74FBE003FE7A5 /* WindowNotificationCenter.swift in Sources */,
+				0E0C0F7C22E7942100158BD8 /* DelegatableWindowEventListener.swift in Sources */,
 				0E02D04922E74FCC003FE7A5 /* ApplicationBundle.swift in Sources */,
 				0E02D04722E74FC6003FE7A5 /* WindowInfo.swift in Sources */,
 			);
