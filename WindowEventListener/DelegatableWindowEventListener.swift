@@ -59,22 +59,25 @@ public class DelegatableWindowEventListener: WindowEventListener {
     }
 
     public func add(delegate: ApplicationBundleDelegate, toBundleIdentifier bundleId: String) {
-
         if registerDelegates.first(where: { $0.bundleId == bundleId }) != nil {
             return
         }
-
+        
         let delegateInfo = DelegateInfo(delegate, bundleId: bundleId)
-
+        
         registerDelegates.append(delegateInfo)
+        add(info: delegateInfo)
+    }
+    
+    private func add(info: DelegateInfo) {
         for bundle in applicationBundles {
-            guard bundle.runningApp.bundleIdentifier == bundleId else {
+            guard bundle.runningApp.bundleIdentifier == info.bundleId else {
                 continue
             }
-            bundle.delegate = delegate
+            bundle.delegate = info.delegate
             return
         }
-        waitingDelegates.append(delegateInfo)
+        waitingDelegates.append(info)
     }
     
     public func remove(delegateWithBundleId bundleId: String) {
@@ -89,15 +92,15 @@ public class DelegatableWindowEventListener: WindowEventListener {
         }
         registerDelegates.remove(at: index)
     }
-
+    
     private func updateDelegates() {
         var delegateBuffer: [DelegateInfo] = []
-
+        
         for _ in 0 ..< waitingDelegates.count {
             delegateBuffer.append(waitingDelegates.removeFirst())
         }
-        for value in delegateBuffer {
-            add(delegate: value.delegate, toBundleIdentifier: value.bundleId)
+        for info in delegateBuffer {
+            add(info: info)
         }
     }
 }

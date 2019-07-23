@@ -98,12 +98,12 @@ public class DelegatableApplicationBundle: ApplicationBundle {
             delegate?.appBundle(self, openWindowWithUuid: window.uuid)
             windows.append(window)
         }
-        for i in 0 ..< windows.count {
-            if windowBuffer.contains(where: { $0 <=> windows[i] }) {
+        for window in windows {
+            if windowBuffer.contains(where: { $0 <=> window }) {
                 continue
             }
-            delegate?.appBundle(self, closeWindowWithUuid: windows[i].uuid)
-            windows.remove(at: i)
+            delegate?.appBundle(self, closeWindowWithUuid: window.uuid)
+            windows.removeAll(where: { $0 <=> window })
         }
         windowBuffer.removeAll()
     }
