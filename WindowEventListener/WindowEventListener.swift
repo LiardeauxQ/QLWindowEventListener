@@ -13,7 +13,7 @@ public class WindowEventListener {
     var refreshTime: TimeInterval = 5
     var actionTimer: RepeatingTimer
 
-    init() {
+    public init() {
         watchingBundleIdentifiers = []
         actionTimer = RepeatingTimer(timeInterval: self.refreshTime)
     }
@@ -40,7 +40,7 @@ public class WindowEventListener {
 public class PublisherWindowEventListener: WindowEventListener {
     private var applicationBundles: [PublisherApplicationBundle]
 
-    override init() {
+    override public init() {
         applicationBundles = []
         super.init()
     }
@@ -78,7 +78,7 @@ public class DelegatableWindowEventListener: WindowEventListener {
     private var waitingDelegate: [(ApplicationBundleDelegate, String)]
     private var registerDelegates: [ApplicationBundleDelegate]
 
-    override init() {
+    override public init() {
         applicationBundles = []
         waitingDelegate = []
         registerDelegates = []
