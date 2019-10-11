@@ -1,3 +1,3 @@
 # WindowEventListener
 
-Listen to windows opening and closing event in macOS.
+Listen to window opening and closing events in macOS.
